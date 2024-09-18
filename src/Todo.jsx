@@ -3,15 +3,14 @@ import "./App.css";
 
 function TodoApp() {
   const [todos, setTodos] = useState(() => {
-    // Get todos from localStorage
+ 
     const savedTodos = localStorage.getItem("todos");
     return savedTodos ? JSON.parse(savedTodos) : [];
   });
   const [newTodo, setNewTodo] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
-  const [filter, setFilter] = useState("all"); // "all", "completed", "pending"
+  const [filter, setFilter] = useState("all"); 
 
-  // Save todos to localStorage on every change
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -19,6 +18,7 @@ function TodoApp() {
   const handleAddOrEditTodo = () => {
     if (newTodo.trim()) {
       if (editingIndex !== null) {
+
         // Edit existing todo
         const updatedTodos = todos.map((todo, i) =>
           i === editingIndex ? { ...todo, text: newTodo } : todo
@@ -26,6 +26,7 @@ function TodoApp() {
         setTodos(updatedTodos);
         setEditingIndex(null); // Reset editing mode
       } else {
+        
         // Add new todo
         setTodos([...todos, { text: newTodo, completed: false }]);
       }
