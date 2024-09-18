@@ -1,4 +1,11 @@
 # LIVE LINK : https://todo-task-rishi.netlify.app/
+
+## FEATURE :
+1. Add, delete, modify todos
+2. Save todos to local storage so that on next visit it should show already existing todos
+3. Responsive UI ( React + CSS + Media query )
+
+   
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
